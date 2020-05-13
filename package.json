@@ -4,6 +4,7 @@
 	"description": "MoreTec design system",
 	"main": "src/index.scss",
 	"scripts": {
+		"start": "node-sass src/index.scss --output showcase/styles/ --watch --source-map true",
 		"prepublish": "node-sass src/index.scss --output-style compressed > dist.css"
 	},
 	"author": "Mårten Åsberg",
