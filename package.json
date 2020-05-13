@@ -1,0 +1,14 @@
+{
+	"name": "@moretec/snygg",
+	"version": "0.0.1",
+	"description": "MoreTec design system",
+	"main": "src/index.scss",
+	"scripts": {
+		"prepublish": "node-sass src/index.scss --output-style compressed > dist.css"
+	},
+	"author": "Mårten Åsberg",
+	"license": "Apache-2.0",
+	"devDependencies": {
+		"node-sass": "^4.14.1"
+	}
+}
