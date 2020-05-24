@@ -19,6 +19,7 @@ header {
 
 	position: sticky;
 	top: 0px;
+	z-index: 10;
 
 	@mixin headerButton {
 		margin: 0px;
@@ -127,7 +128,7 @@ header {
 		}
 	}
 
-	@media (min-width: 720px) {
+	@media (min-width: $bigScreen) {
 		padding: 0px $distance;
 
 		.expand-nav, .expand-more {
