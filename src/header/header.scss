@@ -4,7 +4,6 @@ header {
 	@mixin highShadow {
 		box-shadow: 0px $distance/4 $distance/2 var(--shadow);
 	}
-	$headerSize: 4*$distance;
 
 	width: 100%;
 	height: $headerSize;
