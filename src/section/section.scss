@@ -1,0 +1,14 @@
+@import "../vars";
+
+section {
+	margin: $distance;
+	padding: $distance;
+
+	background-color: var(--level1-color);
+	border-radius: $rounding;
+	box-shadow: 0px $distance/8 $distance/2 var(--shadow);
+
+	> :first-child {
+		margin-top: 0px;
+	}
+}
