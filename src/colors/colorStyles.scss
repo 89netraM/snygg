@@ -2,6 +2,8 @@
 @import "./lightTheme";
 
 :root {
+	--accent: #bada55;
+
 	@include darkTheme;
 
 	@media (prefers-color-scheme: light) {

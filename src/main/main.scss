@@ -1,0 +1,7 @@
+@import "../vars";
+
+@media (min-width: $bigScreen) {
+	main {
+		margin-left: $navSize;
+	}
+}
