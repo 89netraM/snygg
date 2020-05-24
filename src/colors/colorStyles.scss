@@ -1,0 +1,18 @@
+@import "./darkTheme";
+@import "./lightTheme";
+
+:root {
+	@include darkTheme;
+
+	@media (prefers-color-scheme: light) {
+		@include lightTheme;
+	}
+}
+
+[data-theme="dark"] {
+	@include darkTheme;
+}
+
+[data-theme="light"] {
+	@include lightTheme;
+}
