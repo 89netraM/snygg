@@ -1,0 +1,28 @@
+@import "../vars";
+
+button {
+	padding: $distance/2 $distance;
+
+	background-color: var(--level1-color);
+	border: 1px solid var(--border);
+	border-radius: $rounding;
+	outline: none;
+
+	font-weight: bold;
+	color: var(--color);
+
+	cursor: pointer;
+
+	&.primary {
+		border: 1px solid var(--accent);
+		background-color: var(--accent);
+		color: var(--color-inverted);
+	}
+
+	&:hover {
+		filter: brightness(0.9);
+	}
+	&:active {
+		filter: brightness(0.75);
+	}
+}

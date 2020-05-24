@@ -40,6 +40,10 @@ header {
 
 		&:hover {
 			background-color: var(--highlight);
+			filter: none;
+		}
+		&:active {
+			filter: none;
 		}
 	}
 
