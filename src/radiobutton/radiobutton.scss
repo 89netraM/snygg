@@ -37,6 +37,14 @@ label {
 
 				transition: background-color $transitionTime ease-in;
 			}
+
+			@media (prefers-reduced-motion: reduce) {
+				transition: none;
+
+				&::before {
+					transition: none;
+				}
+			}
 		}
 
 		@media (any-hover: hover) {
