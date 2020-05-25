@@ -25,4 +25,9 @@ button {
 	&:active {
 		filter: brightness(0.75);
 	}
+
+	&:disabled {
+		filter: opacity(0.25);
+		cursor: not-allowed;
+	}
 }
