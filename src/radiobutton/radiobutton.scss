@@ -1,0 +1,56 @@
+@import "../vars";
+
+label {
+	$radiobuttonSize: 1.25em;
+	$radioMarkSize: $radiobuttonSize/2;
+	$transitionTime: 0.075s;
+
+	& > input[type="radio"] {
+		display: none;
+
+		& + .radio {
+			width: $radiobuttonSize;
+			height: $radiobuttonSize;
+
+			display: inline-block;
+			vertical-align: text-bottom;
+
+			position: relative;
+
+			border: 1px solid var(--border);
+			border-radius: 100%;
+
+			transition: border-color $transitionTime ease-in;
+
+			&::before {
+				content: "";
+				width: $radioMarkSize;
+				height: $radioMarkSize;
+
+				background-color: transparent;
+				border-radius: 100%;
+
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+
+				transition: background-color $transitionTime ease-in;
+			}
+		}
+
+		&:hover + .radio {
+			&::before {
+				background-color: var(--color);
+			}
+		}
+
+		&:checked + .radio {
+			border-color: var(--accent);
+
+			&::before {
+				background-color: var(--accent);
+			}
+		}
+	}
+}
