@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>snygg Showcase</title>
 		<link rel="stylesheet" href="./styles/index.css"/>
+		<script src="./script.js"></script>
 	</head>
 	<body>
 		<header>
@@ -19,21 +20,22 @@
 		</header>
 		<nav>
 			<ul>
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#">Away</a></li>
-				<li><a href="#">Page 1</a></li>
-				<li><a href="#">Page 2</a></li>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#button">Button</a></li>
+				<li><a href="#checkbox">Checkbox</a></li>
+				<li><a href="#radiobutton">Radiobutton</a></li>
+				<li><a href="#select">Select</a></li>
 				<div class="marker"></div>
 			</ul>
 		</nav>
 		<main>
-			<section>
+			<section id="home" hidden>
 				<h1>snygg Showcase</h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a mauris velit. Nulla facilisi. Nullam consequat sed dui eget rhoncus. Vestibulum a convallis dui. Curabitur at purus malesuada metus porttitor tincidunt quis id turpis. Cras vitae dictum massa, a accumsan leo. Duis suscipit nulla magna, ut vulputate tellus lobortis a. Maecenas lacinia varius bibendum. Aenean vel neque eleifend, bibendum magna a, accumsan dolor. Praesent posuere libero ante, suscipit hendrerit tortor vulputate ut. Vestibulum tempus nibh eget mauris bibendum pharetra.</p>
 				<p>Morbi maximus velit eu mollis semper. Nunc sit amet faucibus tortor, porta fermentum sem. Fusce eu commodo arcu. Phasellus iaculis sed metus consequat volutpat. Nulla diam eros, hendrerit vel molestie in, dapibus eget diam. Maecenas ac massa turpis. Integer eget velit iaculis, eleifend libero mattis, ultricies massa. Fusce faucibus placerat enim eu consequat.</p>
 				<p>Fusce faucibus tortor ac leo euismod, vel tristique erat gravida. Fusce laoreet ullamcorper elit, sit amet venenatis ligula consequat dapibus. Aenean nec congue nunc. Phasellus efficitur a eros vel volutpat. Sed id ullamcorper libero, sit amet dapibus dui. Nulla convallis ultrices dapibus. Mauris at lectus ante. Fusce nibh urna, gravida eu justo quis, ornare porta lacus. Sed maximus est sit amet enim dignissim suscipit sodales eu felis. Nunc bibendum nunc non odio malesuada vehicula. Maecenas est elit, pulvinar a metus sit amet, tristique fringilla nisi. Aliquam congue, nisi ut elementum fermentum, purus risus sollicitudin mauris, quis suscipit ante tortor fermentum tellus. Nulla in sapien ultricies augue dictum varius.</p>
 			</section>
-			<section>
+			<section id="button" hidden>
 				<h1>Buttons</h1>
 				<p>
 					<button>Default</button>
@@ -44,7 +46,7 @@
 					<button class="primary" disabled>Primary</button>
 				</p>
 			</section>
-			<section>
+			<section id="checkbox" hidden>
 				<h1>Checkboxes</h1>
 				<p>
 					<label>
@@ -75,7 +77,7 @@
 					</label>
 				</p>
 			</section>
-			<section>
+			<section id="radiobutton" hidden>
 				<h1>Radiobuttons</h1>
 				<p>
 					<label>
@@ -112,7 +114,7 @@
 					</label>
 				</p>
 			</section>
-			<section>
+			<section id="select" hidden>
 				<h1>Select</h1>
 				<p>
 					<select>
