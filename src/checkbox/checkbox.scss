@@ -18,10 +18,10 @@ label {
 
 			position: relative;
 
-			border: 1px solid var(--border);
+			border: 1px solid var(--color);
 			border-radius: $rounding;
 
-			transition: background-color $transitionTime ease-in;
+			transition: background-color $transitionTime ease-in, border-color $transitionTime ease-in;
 
 			&::before {
 				content: "";
@@ -48,10 +48,16 @@ label {
 
 		&:checked + .checkbox {
 			background-color: var(--accent);
+			border-color: var(--accent);
 
 			&::before {
 				border-color: var(--color-inverted);
 			}
+		}
+
+		&:disabled + .checkbox {
+			filter: opacity(0.25);
+			cursor: not-allowed;
 		}
 	}
 }
