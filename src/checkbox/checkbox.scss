@@ -1,0 +1,57 @@
+@import "../vars";
+
+label {
+	$checkboxSize: 1.25em;
+	$checkMarkSize: $checkboxSize/2;
+	$checkMarkThickness: $checkboxSize/10;
+	$transitionTime: 0.075s;
+
+	& > input[type="checkbox"] {
+		display: none;
+
+		& + .checkbox {
+			width: $checkboxSize;
+			height: $checkboxSize;
+
+			display: inline-block;
+			vertical-align: text-bottom;
+
+			position: relative;
+
+			border: 1px solid var(--border);
+			border-radius: $rounding;
+
+			transition: background-color $transitionTime ease-in;
+
+			&::before {
+				content: "";
+				width: $checkMarkSize;
+				height: $checkMarkSize/2;
+
+				border-left: $checkMarkThickness solid transparent;
+				border-bottom: $checkMarkThickness solid transparent;
+
+				position: absolute;
+				top: ($checkboxSize - $checkMarkSize - $checkMarkThickness) / 2;
+				left: ($checkboxSize - $checkMarkSize - $checkMarkThickness) / 2;
+				transform: rotate(-45deg);
+
+				transition: border-color $transitionTime ease-in;
+			}
+		}
+
+		&:hover + .checkbox {
+			&::before {
+				border-color: var(--color);
+			}
+		}
+
+		&:checked + .checkbox {
+			background-color: var(--accent);
+
+			&::before {
+				border-color: var(--color-inverted);
+			}
+		}
+	}
+}
