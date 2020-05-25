@@ -40,9 +40,11 @@ label {
 			}
 		}
 
-		&:hover + .checkbox {
-			&::before {
-				border-color: var(--color);
+		@media (any-hover: hover) {
+			&:not(:disabled):hover + .checkbox {
+				&::before {
+					border-color: var(--color);
+				}
 			}
 		}
 

@@ -39,9 +39,11 @@ label {
 			}
 		}
 
-		&:hover + .radio {
-			&::before {
-				background-color: var(--color);
+		@media (any-hover: hover) {
+			&:hover + .radio {
+				&::before {
+					background-color: var(--color);
+				}
 			}
 		}
 

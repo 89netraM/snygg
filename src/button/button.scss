@@ -19,9 +19,12 @@ button {
 		color: var(--color-inverted);
 	}
 
-	&:hover {
-		filter: brightness(0.9);
+	@media (any-hover: hover) {
+		&:hover {
+			filter: brightness(0.9);
+		}
 	}
+
 	&:active {
 		filter: brightness(0.75);
 	}
