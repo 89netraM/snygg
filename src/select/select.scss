@@ -1,0 +1,60 @@
+@import "../vars";
+
+select {
+	// color-change
+	// The color of the arrow is supposed to be the same as `var(--color)`
+	$darkThemeArrow: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%225.5%22%3E%3Cpath%20d%3D%22M%209.8153111%2C0.1807469%20A%200.60191516%2C0.58879785%200%200%200%209.3707145%2C9.2468956e-5%20H%200.62926489%20C%200.45826626%2C9.2468956e-5%200.31120744%2C0.06031086%200.18808842%2C0.1807469%20A%200.60191516%2C0.58879785%200%200%200%20-1.0056807e-5%2C0.60896303%20c%200%2C0.1672725%200.06155950681%2C0.31112661%200.184678506807%2C0.43156247%20L%204.5622333%2C5.3193466%20C%204.6853523%2C5.4397825%204.828991%2C5.5%204.9999898%2C5.5%205.1709884%2C5.5%205.3146271%2C5.4397817%205.4377461%2C5.3193466%20L%209.8153111%2C1.0371801%20C%209.93501%2C0.92008964%209.9999896%2C0.77623553%209.9999896%2C0.60896303%20c%200%2C-0.1672715%20-0.06498%2C-0.30778021%20-0.1880986%2C-0.42821613%20z%22%20fill%3D%22%23ffffff%22%2F%3E%3C%2Fsvg%3E");
+	$lightThemeArrow: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%225.5%22%3E%3Cpath%20d%3D%22M%209.8153111%2C0.1807469%20A%200.60191516%2C0.58879785%200%200%200%209.3707145%2C9.2468956e-5%20H%200.62926489%20C%200.45826626%2C9.2468956e-5%200.31120744%2C0.06031086%200.18808842%2C0.1807469%20A%200.60191516%2C0.58879785%200%200%200%20-1.0056807e-5%2C0.60896303%20c%200%2C0.1672725%200.06155950681%2C0.31112661%200.184678506807%2C0.43156247%20L%204.5622333%2C5.3193466%20C%204.6853523%2C5.4397825%204.828991%2C5.5%204.9999898%2C5.5%205.1709884%2C5.5%205.3146271%2C5.4397817%205.4377461%2C5.3193466%20L%209.8153111%2C1.0371801%20C%209.93501%2C0.92008964%209.9999896%2C0.77623553%209.9999896%2C0.60896303%20c%200%2C-0.1672715%20-0.06498%2C-0.30778021%20-0.1880986%2C-0.42821613%20z%22%20fill%3D%22%23000000%22%2F%3E%3C%2Fsvg%3E");
+
+	padding: $distance/4 $distance/2;
+	padding-right: 30px;
+
+	border: 1px solid var(--border);
+	border-radius: $rounding;
+	outline: none;
+	background-color: var(--level1-color);
+	background-repeat: no-repeat;
+	background-origin: padding-box;
+	background-position: right 10px top 50%;
+	color: var(--color);
+
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+
+	cursor: pointer;
+
+	&:disabled {
+		filter: opacity(0.25);
+		cursor: not-allowed;
+	}
+
+	optgroup, option {
+		padding-right: $distance/2;
+
+		outline: none;
+
+		&:hover {
+			background-color: var(--accent);
+		}
+	}
+
+	background-image: $darkThemeArrow;
+	@media (prefers-color-scheme: light) {
+		background-image: $lightThemeArrow;
+	}
+
+	[data-theme="dark"] & {
+		background-image: $darkThemeArrow;
+	}
+	[data-theme="light"] & {
+		background-image: $lightThemeArrow;
+	}
+}
+
+label {
+	select {
+		display: block;
+		margin-top: $distance/4;
+	}
+}
