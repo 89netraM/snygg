@@ -25,6 +25,7 @@
 				<li><a href="#checkbox">Checkbox</a></li>
 				<li><a href="#radiobutton">Radiobutton</a></li>
 				<li><a href="#select">Select</a></li>
+				<li><a href="#range">Range</a></li>
 				<div class="marker"></div>
 			</ul>
 		</nav>
@@ -146,6 +147,28 @@
 						<option>Option 1</option>
 					</select>
 				</p>
+			</section>
+			<section id="range">
+				<h1>Range</h1>
+				<p>
+					<input type="range" min="0" value="5" step="1" max="10">
+				</p>
+				<p>
+					<label>
+						Range:
+						<input type="range" min="0" value="5" step="1" max="10">
+					</label>
+				</p>
+				<p>
+					<label id="range-interactive">
+						<input type="range" min="0" value="5" step="1" max="10">
+						<span data-range-value="5">/10</span>
+					</label>
+				</p>
+				<p>
+					<input disabled type="range" min="0" value="5" step="1" max="10">
+				</p>
+				<script src="./range.js"></script>
 			</section>
 		</main>
 	</body>

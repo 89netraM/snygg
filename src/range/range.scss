@@ -1,0 +1,110 @@
+@import "../vars";
+
+input[type="range"] {
+	$thumbSize: $distance;
+	$trackHeight: $thumbSize/3;
+	$trackWidth: 250px;
+
+	@mixin track {
+		width: 100%;
+		height: $trackHeight;
+
+		background-color: var(--highlight);
+		border: none;
+		border-radius: $rounding;
+
+		cursor: default;
+	}
+
+	@mixin thumb {
+		width: $thumbSize;
+		height: $thumbSize;
+
+		background-color: var(--color);
+		border: 2px solid var(--highlight);
+		border-radius: 100%;
+		cursor: default;
+
+		:active > & {
+			background-color: var(--accent);
+		}
+	}
+
+	max-width: $trackWidth;
+	width: 100%;
+	margin: $thumbSize/2 0px;
+	margin-bottom: 0px;
+	vertical-align: middle;
+
+	background: transparent;
+	outline: none;
+
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+
+	&::-moz-focus-outer {
+		border: none;
+	}
+
+	&::-webkit-slider-runnable-track {
+		@include track;
+	}
+	&::-webkit-slider-thumb {
+		@include thumb;
+		-webkit-appearance: none;
+		margin-top: $trackHeight/2 - $thumbSize/2;
+	}
+
+	&::-moz-range-track {
+		@include track;
+		height: $trackHeight;
+	}
+	&::-moz-range-thumb {
+		@include thumb;
+	}
+
+	&::-ms-track {
+		@include track;
+	}
+	&::-ms-fill-lower {
+		background-color: var(--highlight);
+		border: none;
+		border-radius: $rounding;
+	}
+	&::-ms-fill-upper {
+		background-color: var(--highlight);
+		border: none;
+		border-radius: $rounding;
+	}
+	&::-ms-thumb {
+		@include thumb;
+		margin-top: $trackHeight/4;
+	}
+
+	&:disabled {
+		filter: opacity(0.25);
+		cursor: not-allowed;
+	}
+	
+	label & {
+		margin-top: $thumbSize/2 - $trackHeight/2 + $distance/8;
+		display: block;
+		
+		& + [data-range-value] {
+			height: 0px;
+			width: 0px;
+
+			display: block;
+
+			position: relative;
+			top: -$thumbSize - $trackHeight + $distance/4;
+			left: calc(250px + #{$distance});
+			left: calc(#{"min(100%, #{$trackWidth})"} + #{$distance/2});
+
+			&::before {
+				content: attr(data-range-value);
+			}
+		}
+	}
+}
