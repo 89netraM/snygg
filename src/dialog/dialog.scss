@@ -1,0 +1,72 @@
+@import "../vars";
+
+.dialog {
+	min-width: 300px;
+	max-width: 100vw;
+	max-height: 100vh;
+	padding: 2*$distance;
+
+	display: none;
+	position: fixed;
+	top: 50vh;
+	left: 50vw;
+	z-index: 100;
+	transform: translate(-50%, -50%);
+
+	&[data-open="true"] {
+		display: block;
+	}
+
+	&::before {
+		backdrop-filter: blur(1px) saturate(0.75);
+		content: "";
+
+		position: fixed;
+		top: -50vh;
+		left: -50vw;
+		right: -50vw;
+		bottom: -50vh;
+		z-index: -2;
+	}
+	&::after {
+		background-color: var(--level1-color);
+		border-radius: $rounding;
+		box-shadow: 0px 0px $distance var(--shadow);
+		content: "";
+
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		z-index: -1;
+	}
+
+	header {
+		width: unset;
+		height: unset;
+		margin: unset;
+		padding: unset;
+
+		display: block;
+
+		background: unset;
+		box-shadow: unset;
+		font-size: 200%;
+	}
+
+	main {
+		margin: unset;
+		padding: unset;
+	}
+
+	footer {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+
+		> :not(:last-child) {
+			margin-right: $distance/2;
+		}
+	}
+}
