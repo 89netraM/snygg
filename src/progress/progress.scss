@@ -1,0 +1,42 @@
+@import "../vars";
+
+progress {
+	$radius: 2px;
+
+	max-width: 250px;
+	width: 100%;
+	height: $distance;
+
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+
+	background-color: var(--highlight);
+	border: none;
+	color: var(--accent);
+
+	&::-webkit-progress-bar {
+		background-color: var(--highlight);
+		border-radius: $radius;
+	}
+
+	&::-webkit-progress-value {
+		background-color: var(--accent);
+		border-radius: $radius;
+	}
+	&::-moz-progress-bar {
+		background-color: var(--accent);
+		border-radius: $radius;
+	}
+
+	&.failed {
+		color: var(--error);
+	
+		&::-webkit-progress-value {
+			background-color: var(--error);
+		}
+		&::-moz-progress-bar {
+			background-color: var(--error);
+		}
+	}
+}
