@@ -19,6 +19,12 @@ button {
 		color: var(--color-inverted);
 	}
 
+	&.danger {
+		border: 1px solid var(--error);
+		background-color: var(--error);
+		color: var(--color-inverted);
+	}
+
 	@media (any-hover: hover) {
 		&:hover {
 			filter: brightness(0.9);
