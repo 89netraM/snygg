@@ -1,0 +1,55 @@
+@import "../vars";
+
+input[type="text"], input[type="password"] {
+	max-width: 250px;
+	width: 100%;
+	padding: $distance/4 $distance/2;
+
+	background-color: transparent;
+	color: var(--color);
+	border: 1px solid var(--color);
+	border-radius: 2px;
+	outline: none;
+
+	&::placeholder {
+		color: var(--color);
+		filter: opacity(0.5);
+	}
+
+	@media (any-hover: hover) {
+		filter: brightness(0.8);
+
+		&:not(:disabled):hover {
+			filter: brightness(1.0);
+		}
+	}
+
+	&:disabled {
+		filter: opacity(0.25);
+		cursor: not-allowed;
+	}
+
+	&:focus {
+		border-color: var(--accent);
+		outline: 1px solid var(--accent);
+		filter: brightness(1.0);
+	}
+
+	label & {
+		margin-top: $distance/8;
+		display: block;
+
+		& + .message {
+			font-size: 75%;
+		}
+	}
+
+	label.error & {
+		border-color: var(--error);
+		outline-color: var(--error);
+
+		& + .message {
+			color: var(--error);
+		}
+	}
+}
