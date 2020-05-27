@@ -1,0 +1,88 @@
+@import "../vars";
+
+label {
+	$toggleHeight: 1em;
+	$toggleWidth: $toggleHeight * 2.25;
+	$toggleBorder: 1px;
+	$toggleDotBorder: 2px;
+	$toggleDotSize: calc(#{$toggleHeight} - #{$toggleBorder * 2} - #{$toggleDotBorder * 2});
+	$transitionTime: 0.075s;
+
+	& > input[type="checkbox"] {
+		display: none;
+
+		& + .toggle {
+			width: $toggleWidth;
+			height: $toggleHeight;
+
+			display: inline-block;
+			vertical-align: text-bottom;
+
+			position: relative;
+
+			border: $toggleBorder solid var(--color);
+			border-radius: $toggleHeight/2;
+
+			transition: background-color $transitionTime ease-in, border-color $transitionTime ease-in;
+
+			&::before {
+				content: "";
+
+				width: $toggleDotSize;
+				height: $toggleDotSize;
+
+				background-color: var(--color);
+				border-radius: 100%;
+
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 0px;
+				transform: translate(#{$toggleDotBorder}, -50%);
+
+				transition: transform $transitionTime ease-in;
+			}
+
+			&::after {
+				position: relative;
+				top: -0.25*$toggleHeight;
+				left: calc(100% + #{$distance/2});
+			}
+			&[data-off]::after {
+				content: attr(data-off);
+			}
+
+			@media (prefers-reduced-motion: reduce) {
+				transition: none;
+
+				&::before {
+					transition: none;
+				}
+			}
+		}
+
+		@media (any-hover: hover) {
+			&:not(:disabled):hover + .toggle {
+				filter: brightness(0.9);
+			}
+		}
+
+		&:checked + .toggle {
+			background-color: var(--accent);
+			border-color: var(--accent);
+
+			&::before {
+				transform: translate(calc(#{$toggleWidth} - #{$toggleDotBorder * 2} - #{$toggleDotSize}), -50%);
+			}
+
+			&[data-on]::after {
+				content: attr(data-on);
+			}
+		}
+
+		&:disabled + .toggle {
+			filter: opacity(0.25);
+			cursor: not-allowed;
+		}
+	}
+}
