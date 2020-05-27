@@ -38,9 +38,11 @@ header {
 
 		cursor: pointer;
 
-		&:hover {
-			background-color: var(--highlight);
-			filter: none;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--highlight);
+				filter: none;
+			}
 		}
 		&:active {
 			filter: none;
@@ -117,6 +119,9 @@ header {
 
 		button, a {
 			@include headerButton;
+		}
+		> *{
+			padding: $headerSize/8;
 			padding-right: $distance;
 
 			margin-right: $distance/2;
