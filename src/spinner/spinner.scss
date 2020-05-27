@@ -1,0 +1,44 @@
+@import "../vars";
+
+.spinner {
+	$spinnerSize: 2*$distance;
+	$borderWidth: $spinnerSize/5;
+
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+
+	&::before {
+		min-width: $spinnerSize;
+		min-height: $spinnerSize;
+		margin: 0px;
+		padding: 0px;
+
+		content: "";
+
+		border: $borderWidth solid var(--highlight);
+		border-top-color: var(--accent);
+		border-radius: 100%;
+
+		animation: spin 1.5s linear infinite;
+
+		@keyframes spin {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			animation-duration: 10s;
+		}
+	}
+
+	&[data-label] {
+		&::after {
+			content: attr(data-label);
+		}
+	}
+}
