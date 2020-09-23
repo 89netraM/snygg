@@ -1,0 +1,7 @@
+@import "../vars";
+
+hr {
+	margin: 0px (-$distance / 2);
+	border: 0px;
+	border-bottom: solid 1px var(--color);
+}
