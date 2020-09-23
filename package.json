@@ -1,11 +1,11 @@
 {
 	"name": "@89netram/snygg",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "MoreTec design system",
 	"main": "src/index.scss",
 	"scripts": {
 		"start": "node-sass src/index.scss --output showcase/styles/ --watch --source-map true",
-		"prepublish": "node-sass src/index.scss --output-style compressed > dist.css"
+		"prepublish": "node-sass src/index.scss --output-style compressed > index.css"
 	},
 	"author": "Mårten Åsberg",
 	"license": "Apache-2.0",

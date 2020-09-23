@@ -10,5 +10,5 @@ Install using npm:
 npm install github:89netraM/snygg#<version>
 ```
 
-Where `<version>` is your desired version tag. For example, the first version
-tag is `v1.0.2`.
+Where `<version>` is your desired version tag. For example, the current version
+tag is `v1.0.4`.

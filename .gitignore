@@ -1,4 +1,4 @@
 node_modules
 *.tgz
-dist.css
+index.css
 showcase/styles
