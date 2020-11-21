@@ -1,6 +1,9 @@
 @import "../vars";
 
-input[type="text"], input[type="password"] {
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"] {
 	max-width: 250px;
 	width: 100%;
 	padding: $distance/4 $distance/2;
