@@ -4,12 +4,12 @@
 	"description": "MoreTec design system",
 	"main": "src/index.scss",
 	"scripts": {
-		"start": "node-sass src/index.scss --output showcase/styles/ --watch --source-map true",
-		"prepublish": "node-sass src/index.scss --output-style compressed > index.css"
+		"start": "sass src/index.scss showcase/styles/index.css --watch --source-map",
+		"prepublish": "sass src/index.scss index.css --style compressed --no-source-map"
 	},
 	"author": "Mårten Åsberg",
 	"license": "Apache-2.0",
 	"devDependencies": {
-		"node-sass": "^4.14.1"
+		"sass": "^1.32.8"
 	}
 }
