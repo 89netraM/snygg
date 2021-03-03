@@ -21,7 +21,9 @@ label {
 			border: 1px solid var(--color);
 			border-radius: $rounding;
 
-			transition: background-color $transitionTime ease-in, border-color $transitionTime ease-in;
+			transition: background-color $transitionTime ease-in,
+				border-color $transitionTime ease-in,
+				box-shadow $transitionTime ease-in;
 
 			&::before {
 				content: "";
@@ -68,6 +70,15 @@ label {
 		&:disabled + .checkbox {
 			filter: opacity(0.25);
 			cursor: not-allowed;
+		}
+	}
+
+	&.error > input[type="checkbox"] {
+		& + .checkbox {
+			border-color: var(--error);
+		}
+		&:checked + .checkbox {
+			box-shadow: 0px 0px 0px 1px inset var(--error);
 		}
 	}
 }

@@ -47,12 +47,8 @@ input[type="number"] {
 		}
 	}
 
-	label.error & {
+	label.error &, &.error {
 		border-color: var(--error);
 		outline-color: var(--error);
-
-		& + .message {
-			color: var(--error);
-		}
 	}
 }

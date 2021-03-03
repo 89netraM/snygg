@@ -67,6 +67,13 @@
 					</label>
 				</p>
 				<p>
+					<label class="error">
+						<span>Checkbox:</span>
+						<input type="checkbox"/>
+						<span class="checkbox"></span>
+					</label>
+				</p>
+				<p>
 					<label>
 						Checkbox:
 						<input type="checkbox" disabled/>
@@ -149,6 +156,23 @@
 							<option disabled selected hidden>Select one...</option>
 							<option>Option 1</option>
 						</select>
+						<span class="message">Message</span>
+					</label>
+				</p>
+				<p>
+					<select class="error">
+						<option disabled selected hidden>Select one...</option>
+						<option>Option 1</option>
+					</select>
+				</p>
+				<p>
+					<label class="error">
+						Choose!
+						<select>
+							<option disabled selected hidden>Select one...</option>
+							<option>Option 1</option>
+						</select>
+						<span class="message">Message</span>
 					</label>
 				</p>
 				<p>
@@ -167,6 +191,17 @@
 					<label>
 						Range:
 						<input type="range" min="0" value="5" step="1" max="10">
+						<span class="message">Message</span>
+					</label>
+				</p>
+				<p>
+					<input type="range" class="error" min="0" value="5" step="1" max="10">
+				</p>
+				<p>
+					<label class="error">
+						Range:
+						<input type="range" min="0" value="5" step="1" max="10">
+						<span class="message">Message</span>
 					</label>
 				</p>
 				<p>
@@ -191,6 +226,12 @@
 				<p>
 					<label>
 						Toggle:
+						<input type="checkbox">
+						<span class="toggle"></span>
+					</label>
+				</p>
+				<p>
+					<label class="error">
 						<input type="checkbox">
 						<span class="toggle"></span>
 					</label>
@@ -224,6 +265,9 @@
 						Text:
 						<input type="text" placeholder="Text">
 					</label>
+				</p>
+				<p>
+					<input type="text" class="error">
 				</p>
 				<p>
 					<label class="error">

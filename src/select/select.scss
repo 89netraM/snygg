@@ -24,6 +24,11 @@ select {
 
 	cursor: pointer;
 
+	label.error &, &.error {
+		border-color: var(--error);
+		outline-color: var(--error);
+	}
+
 	&:disabled {
 		filter: opacity(0.25);
 		cursor: not-allowed;

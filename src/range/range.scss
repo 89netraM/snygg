@@ -87,6 +87,14 @@ input[type="range"] {
 		cursor: not-allowed;
 	}
 	
+	@each $thumb in ("-webkit-slider-thumb", "-moz-range-thumb", "-ms-thumb") {
+		label.error &, &.error {
+			&::#{$thumb} {
+				background-color: var(--error);
+			}
+		}
+	}
+	
 	label & {
 		margin-top: $thumbSize/2 - $trackHeight/2 + $distance/8;
 		display: block;
