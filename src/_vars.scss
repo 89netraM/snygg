@@ -1,7 +1,7 @@
-$distance: 1rem;
-$headerSize: 4*$distance;
-$navSize: 15rem;
+$distance: 1rem !default;
+$headerSize: 4*$distance !default;
+$navSize: 15rem !default;
 
-$rounding: 0.25rem;
+$rounding: 0.25rem !default;
 
-$bigScreen: 45rem;
+$bigScreen: 45rem !default;
